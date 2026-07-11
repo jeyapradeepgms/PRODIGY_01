@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineMatch | Find Your Perfect Movie & TV Show</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER / NAVIGATION ========== -->
+  <header class="navbar-header" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-pop">Cine</span><span>Match</span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#discover" class="nav-link">Discover</a></li>
+          <li><a href="#recommender" class="nav-link">Mood Matcher</a></li>
+          <li><a href="#contact" class="nav-link">Request Title</a></li>
+        </ul>
+        <div class="nav-action">
+          <a href="#recommender" class="btn btn-primary btn-sm">Find Movie</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero-section" id="home">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">🎥 Curated Recommendations</div>
+        <h1 class="hero-title">
+          Tired of Endless <br>
+          <span class="gradient-text">Scrolling on Netflix?</span>
+        </h1>
+        <p class="hero-subtitle">
+          Find your next obsession instantly. We filter high-quality cinema and binge-worthy TV series based on your mood, favorite genres, and critic ratings. No clutter, just masterpiece reviews.
+        </p>
+        <div class="hero-actions">
+          <a href="#discover" class="btn btn-primary">Browse Catalogue</a>
+          <a href="#recommender" class="btn btn-outline">Match My Mood</a>
+        </div>
+      </div>
+      
+      <!-- Hero Visual (Interactive Floating Grid Mockup) -->
+      <div class="hero-visual">
+        <div class="visual-grid">
+          <div class="visual-card-item poster-card-sm text-center" style="background-image: linear-gradient(to top, rgba(7, 7, 9, 0.95), rgba(7, 7, 9, 0.3)), url('images/intersteller.jpeg'); background-size: cover; background-position: center;">
+            <span class="card-num">9.0</span>
+            <div class="card-genre">Sci-Fi</div>
+            <h3>Interstellar</h3>
+          </div>
+          <div class="visual-card-item poster-card-sm text-center featured-item" style="background-image: linear-gradient(to top, rgba(7, 7, 9, 0.95), rgba(7, 7, 9, 0.3)), url('images/dexter.jpeg'); background-size: cover; background-position: center;">
+            <span class="card-num">8.7</span>
+            <div class="card-genre">Crime</div>
+            <h3>Dexter</h3>
+          </div>
+          <div class="visual-card-item poster-card-sm text-center" style="background-image: linear-gradient(to top, rgba(7, 7, 9, 0.95), rgba(7, 7, 9, 0.3)), url('images/spotless_mind.jpeg'); background-size: cover; background-position: center;">
+            <span class="card-num">8.3</span>
+            <div class="card-genre">Romance</div>
+            <h3>Spotless Mind</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DISCOVER SECTION (INTERACTIVE CATALOGUE) ========== -->
+  <section class="discover-section" id="discover">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Movie Grid</span>
+        <h2 class="section-title">Explore Masterpieces</h2>
+        <p class="section-desc">Filter by media type or click a genre badge to find what you want to watch tonight.</p>
+      </div>
+
+      <!-- Type Filter Tabs -->
+      <div class="filter-tabs-wrapper">
+        <div class="filter-tabs">
+          <button class="tab-btn active" data-type="all">All Content</button>
+          <button class="tab-btn" data-type="movie">Movies</button>
+          <button class="tab-btn" data-type="series">TV Series</button>
+        </div>
+      </div>
+
+      <!-- Genre Badge Selectors -->
+      <div class="genre-badges-wrapper">
+        <button class="genre-badge active" data-genre="all">All Genres</button>
+        <button class="genre-badge" data-genre="mystery">Mystery</button>
+        <button class="genre-badge" data-genre="thriller">Thriller</button>
+        <button class="genre-badge" data-genre="crime">Crime</button>
+        <button class="genre-badge" data-genre="horror">Horror</button>
+        <button class="genre-badge" data-genre="sci-fi">Sci-Fi</button>
+        <button class="genre-badge" data-genre="romance">Romance</button>
+      </div>
+
+      <!-- Movie Grid Container -->
+      <div class="movie-grid" id="movie-grid">
+        
+        <!-- CARD 1: Interstellar (Movie, Recommended, Sci-Fi/Thriller) -->
+        <div class="glass-card movie-card filter-item" data-type="movie" data-genres="sci-fi,thriller">
+          <span class="card-badge recommended-badge">★ Recommended</span>
+          <div class="movie-poster-container">
+            <img src="images/intersteller.jpeg" alt="Interstellar Poster" class="movie-poster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 100 100\' fill=\'%23121217\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23e50914\' font-family=\'sans-serif\' font-size=\'10\'>Interstellar</text></svg>'">
+          </div>
+          <div class="movie-content">
+            <div class="movie-header">
+              <span class="rating">9.0/10</span>
+              <span class="media-tag">Movie</span>
+            </div>
+            <h3 class="movie-title">Interstellar</h3>
+            <p class="movie-synopsis">
+              A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival. A mind-bending, emotional journey across space and time.
+            </p>
+            <div class="movie-genres">
+              <span class="genre-tag">Sci-Fi</span>
+              <span class="genre-tag">Thriller</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: Dexter (Series, Recommended, Crime/Thriller/Mystery) -->
+        <div class="glass-card movie-card filter-item" data-type="series" data-genres="crime,thriller,mystery">
+          <span class="card-badge recommended-badge">★ Recommended</span>
+          <div class="movie-poster-container">
+            <img src="images/dexter.jpeg" alt="Dexter Poster" class="movie-poster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 100 100\' fill=\'%23121217\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23e50914\' font-family=\'sans-serif\' font-size=\'10\'>Dexter</text></svg>'">
+          </div>
+          <div class="movie-content">
+            <div class="movie-header">
+              <span class="rating">8.7/10</span>
+              <span class="media-tag">TV Series</span>
+            </div>
+            <h3 class="movie-title">Dexter</h3>
+            <p class="movie-synopsis">
+              By day, Dexter Morgan is a mild-mannered blood splatter analyst for the Miami Metro Police. By night, he is a vigilante serial killer targeting criminals who escaped justice.
+            </p>
+            <div class="movie-genres">
+              <span class="genre-tag">Crime</span>
+              <span class="genre-tag">Thriller</span>
+              <span class="genre-tag">Mystery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Eternal Sunshine of the Spotless Mind (Movie, Romance/Sci-Fi) -->
+        <div class="glass-card movie-card filter-item" data-type="movie" data-genres="romance,sci-fi">
+          <div class="movie-poster-container">
+            <img src="images/spotless_mind.jpeg" alt="Eternal Sunshine Poster" class="movie-poster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 100 100\' fill=\'%23121217\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23e50914\' font-family=\'sans-serif\' font-size=\'10\'>Spotless Mind</text></svg>'">
+          </div>
+          <div class="movie-content">
+            <div class="movie-header">
+              <span class="rating">8.3/10</span>
+              <span class="media-tag">Movie</span>
+            </div>
+            <h3 class="movie-title">Eternal Sunshine of the Spotless Mind</h3>
+            <p class="movie-synopsis">
+              When their relationship turns sour, a couple undergoes a high-tech medical procedure to have each other completely erased from their memories forever.
+            </p>
+            <div class="movie-genres">
+              <span class="genre-tag">Romance</span>
+              <span class="genre-tag">Sci-Fi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: Eyes Wide Shut (Movie, Mystery/Thriller) -->
+        <div class="glass-card movie-card filter-item" data-type="movie" data-genres="mystery,thriller">
+          <div class="movie-poster-container">
+            <img src="images/eyes_wide_shut.jpeg" alt="Eyes Wide Shut Poster" class="movie-poster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 100 100\' fill=\'%23121217\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23e50914\' font-family=\'sans-serif\' font-size=\'10\'>Eyes Wide Shut</text></svg>'">
+          </div>
+          <div class="movie-content">
+            <div class="movie-header">
+              <span class="rating">7.5/10</span>
+              <span class="media-tag">Movie</span>
+            </div>
+            <h3 class="movie-title">Eyes Wide Shut</h3>
+            <p class="movie-synopsis">
+              Stanley Kubrick's final masterpiece. A New York doctor embarks on a night-long surreal odyssey of sexual and moral discovery after his wife admits her secret desires.
+            </p>
+            <div class="movie-genres">
+              <span class="genre-tag">Mystery</span>
+              <span class="genre-tag">Thriller</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5: Obsession (Movie, Mystery/Thriller) -->
+        <div class="glass-card movie-card filter-item" data-type="movie" data-genres="mystery,thriller">
+          <div class="movie-poster-container">
+            <img src="images/obession.jpeg" alt="Obsession Poster" class="movie-poster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 100 100\' fill=\'%23121217\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23e50914\' font-family=\'sans-serif\' font-size=\'10\'>Obsession</text></svg>'">
+          </div>
+          <div class="movie-content">
+            <div class="movie-header">
+              <span class="rating">6.8/10</span>
+              <span class="media-tag">Movie</span>
+            </div>
+            <h3 class="movie-title">Obsession</h3>
+            <p class="movie-synopsis">
+              A businessman becomes deeply obsessed with a young Italian woman who bears an uncanny resemblance to his long-dead wife, leading to shocking revelations.
+            </p>
+            <div class="movie-genres">
+              <span class="genre-tag">Mystery</span>
+              <span class="genre-tag">Thriller</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6: Zodiac (Movie, Crime/Mystery/Thriller) -->
+        <div class="glass-card movie-card filter-item" data-type="movie" data-genres="crime,mystery,thriller">
+          <div class="movie-poster-container">
+            <img src="images/zodiac.jpeg" alt="Zodiac Poster" class="movie-poster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 100 100\' fill=\'%23121217\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23e50914\' font-family=\'sans-serif\' font-size=\'10\'>Zodiac</text></svg>'">
+          </div>
+          <div class="movie-content">
+            <div class="movie-header">
+              <span class="rating">7.7/10</span>
+              <span class="media-tag">Movie</span>
+            </div>
+            <h3 class="movie-title">Zodiac</h3>
+            <p class="movie-synopsis">
+              A San Francisco cartoonist becomes an amateur detective obsessed with tracking down the elusive Zodiac Killer, who terrorizes Northern California with codes and letters.
+            </p>
+            <div class="movie-genres">
+              <span class="genre-tag">Crime</span>
+              <span class="genre-tag">Mystery</span>
+              <span class="genre-tag">Thriller</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 7: The Mentalist (Series, Crime/Mystery) -->
+        <div class="glass-card movie-card filter-item" data-type="series" data-genres="crime,mystery">
+          <div class="movie-poster-container">
+            <img src="images/the_mentalist.jpeg" alt="The Mentalist Poster" class="movie-poster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 100 100\' fill=\'%23121217\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23e50914\' font-family=\'sans-serif\' font-size=\'10\'>The Mentalist</text></svg>'">
+          </div>
+          <div class="movie-content">
+            <div class="movie-header">
+              <span class="rating">8.1/10</span>
+              <span class="media-tag">TV Series</span>
+            </div>
+            <h3 class="movie-title">The Mentalist</h3>
+            <p class="movie-synopsis">
+              Patrick Jane, a former celebrity psychic who admits his skills are fake, serves as a consultant for the CBI, using keen observational skills to track down Red John.
+            </p>
+            <div class="movie-genres">
+              <span class="genre-tag">Crime</span>
+              <span class="genre-tag">Mystery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 8: Better Call Saul (Series, Crime) -->
+        <div class="glass-card movie-card filter-item" data-type="series" data-genres="crime">
+          <div class="movie-poster-container">
+            <img src="images/better_call_saul.jpeg" alt="Better Call Saul Poster" class="movie-poster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 100 100\' fill=\'%23121217\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23e50914\' font-family=\'sans-serif\' font-size=\'10\'>Better Call Saul</text></svg>'">
+          </div>
+          <div class="movie-content">
+            <div class="movie-header">
+              <span class="rating">9.0/10</span>
+              <span class="media-tag">TV Series</span>
+            </div>
+            <h3 class="movie-title">Better Call Saul</h3>
+            <p class="movie-synopsis">
+              The trials and tribulations of criminal defense attorney Jimmy McGill in the years leading up to his transformation into his fateful alter ego, Saul Goodman.
+            </p>
+            <div class="movie-genres">
+              <span class="genre-tag">Crime</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 9: The Shining (Movie, Horror/Mystery/Thriller) -->
+        <div class="glass-card movie-card filter-item" data-type="movie" data-genres="horror,mystery,thriller">
+          <div class="movie-poster-container">
+            <img src="images/the_shining.jpeg" alt="The Shining Poster" class="movie-poster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 100 100\' fill=\'%23121217\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23e50914\' font-family=\'sans-serif\' font-size=\'10\'>The Shining</text></svg>'">
+          </div>
+          <div class="movie-content">
+            <div class="movie-header">
+              <span class="rating">8.4/10</span>
+              <span class="media-tag">Movie</span>
+            </div>
+            <h3 class="movie-title">The Shining</h3>
+            <p class="movie-synopsis">
+              A family heads to an isolated hotel for the winter where a sinister presence influences the father into madness and violence, while his psychic son sees horrific premonitions.
+            </p>
+            <div class="movie-genres">
+              <span class="genre-tag">Horror</span>
+              <span class="genre-tag">Mystery</span>
+              <span class="genre-tag">Thriller</span>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 10: Requiem for a Dream (Movie, Horror/Thriller) -->
+        <div class="glass-card movie-card filter-item" data-type="movie" data-genres="horror,thriller">
+          <div class="movie-poster-container">
+            <img src="images/requiem_for_a_dream.jpeg" alt="Requiem for a Dream Poster" class="movie-poster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 100 100\' fill=\'%23121217\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23e50914\' font-family=\'sans-serif\' font-size=\'10\'>Requiem for a Dream</text></svg>'">
+          </div>
+          <div class="movie-content">
+            <div class="movie-header">
+              <span class="rating">8.3/10</span>
+              <span class="media-tag">Movie</span>
+            </div>
+            <h3 class="movie-title">Requiem for a Dream</h3>
+            <p class="movie-synopsis">
+              The drug-induced utopias of four Coney Island people are shattered when their addictions control their lives, leading to a tragic, intense spiral of physical and mental decay.
+            </p>
+            <div class="movie-genres">
+              <span class="genre-tag">Horror</span>
+              <span class="genre-tag">Thriller</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 11: Atonement (Movie, Romance/Mystery) -->
+        <div class="glass-card movie-card filter-item" data-type="movie" data-genres="romance,mystery">
+          <div class="movie-poster-container">
+            <img src="images/atonement.jpeg" alt="Atonement Poster" class="movie-poster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 100 100\' fill=\'%23121217\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23e50914\' font-family=\'sans-serif\' font-size=\'10\'>Atonement</text></svg>'">
+          </div>
+          <div class="movie-content">
+            <div class="movie-header">
+              <span class="rating">7.8/10</span>
+              <span class="media-tag">Movie</span>
+            </div>
+            <h3 class="movie-title">Atonement</h3>
+            <p class="movie-synopsis">
+              A young girl's false accusation changes the course of several lives, separating two lovers during World War II, leading to a lifelong journey of guilt, love, and redemption.
+            </p>
+            <div class="movie-genres">
+              <span class="genre-tag">Romance</span>
+              <span class="genre-tag">Mystery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 12: La La Land (Movie, Romance) -->
+        <div class="glass-card movie-card filter-item" data-type="movie" data-genres="romance">
+          <div class="movie-poster-container">
+            <img src="images/la_la_land.jpeg" alt="La La Land Poster" class="movie-poster" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 100 100\' fill=\'%23121217\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23e50914\' font-family=\'sans-serif\' font-size=\'10\'>La La Land</text></svg>'">
+          </div>
+          <div class="movie-content">
+            <div class="movie-header">
+              <span class="rating">8.0/10</span>
+              <span class="media-tag">Movie</span>
+            </div>
+            <h3 class="movie-title">La La Land</h3>
+            <p class="movie-synopsis">
+              A jazz pianist and an aspiring actress fall deeply in love while navigating their careers in Los Angeles, exploring the compromises and beauty of pursuing their dreams.
+            </p>
+            <div class="movie-genres">
+              <span class="genre-tag">Romance</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INTERACTIVE RECOMMENDER (MOOD MATCHER) ========== -->
+  <section class="recommender-section" id="recommender">
+    <div class="container">
+      <div class="recommender-card-wrapper">
+        <div class="recommender-glow"></div>
+        <div class="glass-card recommender-card">
+          <div class="recommender-grid">
+            <div class="recommender-info">
+              <h2 class="recommender-title">Find Your Perfect CineMatch</h2>
+              <p class="recommender-subtitle">
+                Select your preferred category, how much time you have, and your current mood, and our selector tool will instantly find a matching recommendation from our curated vault!
+              </p>
+              
+              <div class="fact-list">
+                <div class="fact-item">
+                  <span class="fact-icon">🍿</span>
+                  <span>Curated masterpiece selection only</span>
+                </div>
+                <div class="fact-item">
+                  <span class="fact-icon">⚡</span>
+                  <span>Instant client-side recommendation engine</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Matcher Form -->
+            <form class="recommender-form" id="matcherForm">
+              <div class="form-group">
+                <label for="mediaType">I want to watch a...</label>
+                <select id="mediaType" name="mediaType" required class="select-dropdown">
+                  <option value="" disabled selected>Select format</option>
+                  <option value="movie">Movie (2-3 Hours)</option>
+                  <option value="series">TV Show (Multi-season binge)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="userMood">My current mood is...</label>
+                <select id="userMood" name="userMood" required class="select-dropdown">
+                  <option value="" disabled selected>Select mood</option>
+                  <option value="mindbending">Mind-bending &amp; Complex</option>
+                  <option value="dark">Dark &amp; Intrigued</option>
+                  <option value="romantic">Emotional &amp; Romantic</option>
+                  <option value="suspense">Suspenseful &amp; Tense</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="formSubmitBtn">Find My Match</button>
+              <div class="form-feedback-message" id="formFeedback"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REQUEST SECTION ========== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Request Title</span>
+        <h2 class="section-title">Suggest a Masterpiece</h2>
+        <p class="section-desc">Know a movie or series that belongs in this curated grid? Submit your recommendation!</p>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <form class="contact-form" id="requestForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="titleName">Title Name</label>
+              <input type="text" id="titleName" placeholder="e.g. Memento" required>
+            </div>
+            <div class="form-group">
+              <label for="titleType">Format</label>
+              <select id="titleType" required class="select-dropdown">
+                <option value="movie">Movie</option>
+                <option value="series">TV Series</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="titleGenre">Genres</label>
+            <input type="text" id="titleGenre" placeholder="e.g. Mystery, Thriller" required>
+          </div>
+          <div class="form-group">
+            <label for="whyRecommend">Why does it belong here?</label>
+            <textarea id="whyRecommend" placeholder="Provide a brief review explaining its masterpiece status..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#" class="nav-logo">
+          <span class="logo-pop">Cine</span><span>Match</span>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CineMatch. Built for Prodigy Infotech Responsive Landing Page Internship Task.</p>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#discover">Browse Catalogue</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== IMAGE LIGHTBOX MODAL ========== -->
+  <div class="image-modal" id="imageModal">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Full Size Poster">
+  </div>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
