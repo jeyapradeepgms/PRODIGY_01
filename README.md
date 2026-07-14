@@ -7,7 +7,15 @@ This project was built as **Task 01: Responsive Landing Page** for the web devel
 ---
 
 ## 📸 Preview
-![CineMatch Preview](screenshot.png)
+
+### Hero & Navigation
+![CineMatch Hero Section](screenshot.png)
+
+### Mood Matcher Recommender
+![CineMatch Mood Matcher](screenshot2.png)
+
+### Interactive Movie Grid
+![CineMatch Catalogue](screenshot3.png)
 
 ---
 
