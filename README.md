@@ -6,6 +6,11 @@ This project was built as **Task 01: Responsive Landing Page** for the web devel
 
 ---
 
+## 📸 Preview
+![CineMatch Preview](screenshot.png)
+
+---
+
 ## ✨ Features
 1. **Interactive Mood Matcher Engine**: A client-side recommendation wizard that filters movies and TV shows instantly based on media type (Movie / TV Series) and mood (Mind-bending, Dark, Romantic, Suspenseful).
 2. **Dynamic Multi-Attribute Filtering Grid**: Explore curated films and TV series by content format or specific genres (Mystery, Thriller, Sci-Fi, Romance, Horror, Crime) with zero page reloads.
@@ -32,25 +37,3 @@ This project was built as **Task 01: Responsive Landing Page** for the web devel
 ├── script.js        # Navbar scroll hooks, menu drawers, intersection observer, grid filtering, and recommendations
 └── images/          # Assets and movie poster graphics
 ```
-
----
-
-## 🚀 Getting Started
-To view the project locally:
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/jeyapradeepgms/Task-01.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd Task-01
-   ```
-3. Open `index.html` in any web browser.
-
----
-
-## 📱 Responsiveness
-This landing page is built from the ground up to support all screen widths:
-- **Desktop (1024px and up)**: Expanded floating grid layout, double-column matcher, horizontal navigation menu.
-- **Tablet (768px - 1023px)**: Two-column grid, responsive container alignment.
-- **Mobile (320px - 767px)**: Stacked single-column card layouts, full-screen overlay hamburger navigation menu, touch-optimized interactive controls.
